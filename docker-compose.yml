@@ -8,3 +8,9 @@ services:
       - POSTGRES_USER=odoo
     ports:
       - "5432:5432"
+  web:
+    image: odoo:16.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
