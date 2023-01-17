@@ -2,6 +2,7 @@ version: "3.1"
 services:
   db:
     image: postgres:13
+    container_name: dam_postgres
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
@@ -10,6 +11,7 @@ services:
       - "5432:5432"
   web:
     image: odoo:16.0
+    container_name: dam_odoo
     depends_on:
       - db
     ports:
